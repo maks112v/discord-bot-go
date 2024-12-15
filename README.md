@@ -2,6 +2,12 @@
 
 A template for creating Discord bots using Go, featuring a clean command structure, logging, and environment configuration.
 
+## Trying it out
+
+To try out the example bot, you can install it using the following link:
+
+[Install Example Bot](https://discord.com/oauth2/authorize?client_id=1317678697834221640)
+
 ## Features
 
 - Slash command support with validation
