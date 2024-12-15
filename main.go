@@ -19,11 +19,16 @@ func main() {
 	}
 	logger := zap.Sugar()
 
-	// Load the .env file
-	logger.Debug("Loading .env file")
-	err = godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
+	// Load the .env file or use the environment variables
+	logger.Debug("Checking if .env file exists")
+	if _, err := os.Stat(".env"); os.IsNotExist(err) {
+		logger.Debug(".env file does not exist")
+	} else {
+		logger.Debug("Loading .env file")
+		err = godotenv.Load()
+		if err != nil {
+			logger.Fatal("Error loading .env file")
+		}
 	}
 
 	logger.Info("Starting discord bot")
