@@ -27,12 +27,14 @@ func NewCommands(logger *zap.SugaredLogger, session *discordgo.Session) *Command
 	ping := NewPingCommand(logger)
 	validation := NewValidationExampleCommand(logger)
 	subCommand := NewSubCommandExampleCommand(logger)
+	followUp := NewFollowUpCommand(logger)
 
 	// Create a map of active commands
 	activeCommands := map[string]Command{
 		ping.Name():       ping,
 		validation.Name(): validation,
 		subCommand.Name(): subCommand,
+		followUp.Name():   followUp,
 	}
 
 	return &Commands{

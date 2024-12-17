@@ -27,7 +27,7 @@ To try out the example bot, you can install it using the following link:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/discord-bot-go
+git clone https://github.com/maks112v/discord-bot-go
 cd discord-bot-go
 ```
 
@@ -76,8 +76,9 @@ discord-bot-go/
     └── commands/          # Command implementations
         ├── commands.go    # Command handler and registration
         ├── ping.go        # Simple ping command
-        ├── subcommands.go # Subcommand example
-        └── validation.go  # Command with validation
+        ├── subcommands.go # Command with subcommands
+        ├── validation.go  # Command with validation
+        └── followup.go    # Command with follow-up messages
 ```
 
 ## Adding New Commands
@@ -99,15 +100,15 @@ type Command interface {
 
 - `/ping` - Basic ping command
 - `/validation` - Example of command with guild-only validation
+- `/followup` - Example of using follow-up messages in threads
 - `/subcommand` - Example of command with subcommands
   - `/subcommand list`
   - `/subcommand create`
 
 ## License
 
-Unlicense
+Unlicense license. See [LICENSE](LICENSE) for more information.
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
